@@ -1,0 +1,290 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== RESET & BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #FFFFFF;
+  color: var(--color-text-primary);
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== ACCESSIBILITÉ ===== */
+*:focus-visible {
+  outline: 2px solid var(--color-terracotta);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== DÉGRADÉS PREMIUM ===== */
+.bg-gradient-warm {
+  background: linear-gradient(135deg, #E2725B 0%, #D2B48C 100%);
+}
+
+.bg-gradient-soft {
+  background: linear-gradient(180deg, #FEFDFB 0%, #F5F5DC 100%);
+}
+
+.bg-gradient-hero {
+  background: linear-gradient(135deg, #F5F5DC 0%, #E8DCC4 50%, #D2B48C 100%);
+}
+
+.bg-gradient-dark {
+  background: linear-gradient(180deg, #8B7355 0%, #6B5A48 100%);
+}
+
+.bg-gradient-radial-terracotta {
+  background: radial-gradient(circle at center, #E8DCC4 0%, #E2725B 100%);
+}
+
+.bg-gradient-vibrant {
+  background: linear-gradient(135deg, #E2725B 0%, #D2B48C 50%, #E8DCC4 100%);
+}
+
+/* ===== TEXT GRADIENTS ===== */
+.text-gradient-warm {
+  background: linear-gradient(135deg, #E2725B, #D2B48C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-hero {
+  background: linear-gradient(135deg, #8B7355, #E2725B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ===== ANIMATIONS SUBTILES ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(226, 114, 91, 0.3),
+                0 0 40px rgba(210, 180, 140, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(226, 114, 91, 0.5),
+                0 0 60px rgba(210, 180, 140, 0.3);
+  }
+}
+
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-slide-in-up {
+  animation: slide-in-up 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out forwards;
+}
+
+/* ===== HOVER EFFECTS SOPHISTIQUÉS ===== */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* ===== BACKDROP BLUR ===== */
+.backdrop-blur-soft {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.backdrop-blur-medium {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.backdrop-blur-strong {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+:root {
+  /* ===== PALETTE E-COMMERCE PREMIUM - NESSYCREA ===== */
+
+  /* Couleurs Cocooning - Beige */
+  --color-white: #FFFFFF;
+  --color-cream: #FEFDFB;
+  --color-beige: #F5F5DC;
+  --color-beige-medium: #E8DCC4;
+  --color-beige-dark: #D4C4A8;
+
+  /* Couleurs Chaleureuses - Marron */
+  --color-brown-light: #D2B48C;
+  --color-brown-medium: #C4A77D;
+  --color-brown-dark: #8B7355;
+  --color-brown-text: #2C2C2C;
+
+  /* Couleurs Accent - Terracotta */
+  --color-terracotta: #E2725B;
+  --color-terracotta-dark: #CD5C5C;
+  --color-terracotta-light: #F4A89F;
+
+  /* Couleurs Fonctionnelles */
+  --color-success: #7CB342;
+  --color-error: #E53935;
+  --color-warning: #FB8C00;
+  --color-text-primary: #2C2C2C;
+  --color-text-secondary: #5A5A5A;
+  --color-text-light: #8B8B8B;
+
+  /* Ombres Douces & Sophistiquées */
+  --shadow-sm: 0 2px 8px rgba(226, 114, 91, 0.08);
+  --shadow-md: 0 4px 16px rgba(196, 167, 125, 0.12);
+  --shadow-lg: 0 8px 32px rgba(139, 115, 85, 0.15);
+  --shadow-xl: 0 16px 48px rgba(226, 114, 91, 0.18);
+  --shadow-2xl: 0 24px 64px rgba(139, 115, 85, 0.20);
+
+  /* Espacements Harmonieux */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6rem;
+
+  /* Fonts */
+  --font-logo: var(--font-great-vibes);
+  --font-heading: var(--font-cormorant);
+  --font-body: var(--font-montserrat);
+
+  /* shadcn/ui Variables */
+  --radius: 0.75rem;
+  --background: #FFFFFF;
+  --foreground: #2C2C2C;
+  --card: #FEFDFB;
+  --card-foreground: #2C2C2C;
+  --popover: #FFFFFF;
+  --popover-foreground: #2C2C2C;
+  --primary: #E2725B;
+  --primary-foreground: #FFFFFF;
+  --secondary: #D2B48C;
+  --secondary-foreground: #2C2C2C;
+  --muted: #F5F5DC;
+  --muted-foreground: #5A5A5A;
+  --accent: #E2725B;
+  --accent-foreground: #FFFFFF;
+  --destructive: #E53935;
+  --border: #E8DCC4;
+  --input: #E8DCC4;
+  --ring: #E2725B;
+  --chart-1: #E2725B;
+  --chart-2: #D2B48C;
+  --chart-3: #C4A77D;
+  --chart-4: #F5F5DC;
+  --chart-5: #8B7355;
+}
+
+
+/* ===== SCROLLBAR CUSTOM ===== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-beige);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-terracotta);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-terracotta-dark);
+}
+
+/* ===== UTILITY CLASSES ===== */
+.container-custom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* ===== TRANSITIONS GLOBALES (300ms) ===== */
+a, button, input, textarea, select {
+  transition: all 0.3s ease;
+}
